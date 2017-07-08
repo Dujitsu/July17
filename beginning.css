@@ -1,0 +1,198 @@
+
+*{
+    margin: 0;
+    padding: 0;    
+}
+#wrapper{
+    width: 900px;
+    font-size: 1.3em;
+}
+
+.left-aside{
+    width: 250px;
+    float: left;
+    background-color:black;
+}
+
+#beginning{
+    background-color: #1B1811;
+    border: solid gray 2px;
+    color: gray;
+}
+#beginning h1{
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFE4C4;
+}
+#beginning h4{
+    color: #ffddb3;
+}
+#beginning h4 a{
+    color: white;
+}
+#beginning a:hover{
+    color: #fff4e6;
+}
+#beginning span{
+    float: right;
+}
+button[name="protip"]{
+    font-weight: bold;
+    background-color: #333333;
+    color: white;
+    border: none;
+}
+#advertise{
+    background-color: #1B1811;
+    border: solid gray 2px;
+    color: gray;
+}
+#tempButtons{
+    border: solid gray 2px;
+}
+#tempButtons button{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0;
+    color: white;
+    background-color: #262626;
+    border: none;
+}
+#tempButtons button[name="search"]{
+    background-color: #333333
+}
+#tempButtons button[name=import]{
+    background-color: #666666;
+    border-top: #e6e6e6 solid 1.5px;
+}
+#tempButtons button[name=reset]{
+    background-color: #666666;
+    border-top: #e6e6e6 solid 1.5px;
+    float: right;
+}
+
+
+body {
+margin-left: 50px;
+margin-right: 50px;
+border: solid gray 2px;
+background-color: #1B1811;
+color: #FFE4C4;
+font-size: 62.5%;
+
+}
+#beginning button[name="currencyMarket"]{
+    color:black;
+    font-weight: bold;
+    background-color: #FFE4C4;
+    float: right;
+    border: none;
+    height: 25px;
+    width: 250px;
+}
+form{
+    margin: 5px;
+}
+div.formTitles{
+    color: #FFE4C4;
+    font-size: 13px;
+}
+section[name="Sockets"] span{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+sectionp[name="Sockets"] input{
+    width: 60px;
+    height: 20px;
+}
+section[name="Sockets2"]{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+section[name="Sockets2"] span{
+    padding-right: 20px;
+}
+section[name="Sockets2"] input{
+    width: 25px;
+}
+section[name="Sockets2"] input[name="R"]{
+    border-bottom: 2.5px solid red;
+}
+section[name="Sockets2"] input[name="G"]{
+    border-bottom: 2.5px solid green;
+}
+section[name="Sockets2"] input[name="B"]{
+    border-bottom: 2.5px solid blue;
+}
+section[name="Sockets2"] input[name="W"]{
+    border-bottom: 2.5px solid white;
+}
+section[name="Requirements"] span{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+section[name="Requirements"] input{
+    width: 40px;
+    height: 20px;
+}
+#Mods{
+    width: 500px;
+    padding-left: 5px;
+}
+section[name="Mods"] button[name="cancel"]{
+    width: 40px;
+}
+section[name="Mods"] button[name="AddMod"]{
+    width: 70px;
+}
+section[name="Mods"] button[name="DeleteCondition"]{
+    float: right;
+}
+
+
+#Misc{
+    border: solid gray 2px;
+}
+section[name="Misc"] span{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+section[name="Misc"] input[name="name"], section[name="Misc"] input[name="thread"], section[name="Misc"] #Identified, section[name="Misc"] #Rarity, section[name="Misc"] #Corrupted, section[name="Misc"] #Buyout
+, section[name="Misc"] #Crafted, section[name="Misc"] #Enchanted{
+    width: 100px;
+}
+
+input[type="text"]{
+    width: 50px;
+}
+input[type="text"][name="Name"]{
+    width:600px;
+    margin-left: 20px;
+}
+.Colors input[type="text"][name="R"], .Linked[name="R"]{
+    border-bottom: red;
+}
+.Colors[name="g"], .Linked[name="G"]{
+    border-bottom: green;
+}
+.Colors[name="B"], .Linked[name="B"]{
+    border-bottom: blue;
+}
+.Colors[name="W"], .Linked[name="W"]{
+    border-bottom: #fff;
+}
+
+
+footer{
+    border-top: solid gray;
+    margin: 5px;
+}
+footer h4{
+    font-size: 12px;
+}
+footer a{
+    color:#FFE4C4;
+}
+footer a:hover{
+    color: #fff4e6;
+}
