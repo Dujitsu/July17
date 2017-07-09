@@ -1,13 +1,20 @@
 
 *{
     margin: 0;
-    padding: 0;    
+    padding: 0;
 }
 #wrapper{
+    padding-left: 500px;
+    padding-right: 500px;
     width: 900px;
     font-size: 1.3em;
 }
-
+input{
+    background-color: #0F0F0F;
+}
+::placeholder{
+    color: #FFE4C4;
+}
 .left-aside{
     width: 250px;
     float: left;
@@ -15,7 +22,7 @@
 }
 
 #beginning{
-    background-color: #1B1811;
+    background-color: #0F0F0F;
     border: solid gray 2px;
     color: gray;
 }
@@ -43,7 +50,7 @@ button[name="protip"]{
     border: none;
 }
 #advertise{
-    background-color: #1B1811;
+    background-color: #0F0F0F;
     border: solid gray 2px;
     color: gray;
 }
@@ -76,7 +83,8 @@ body {
 margin-left: 50px;
 margin-right: 50px;
 border: solid gray 2px;
-background-color: #1B1811;
+/*background-color: #1B1811;*/
+background-color: #0F0F0F;
 color: #FFE4C4;
 font-size: 62.5%;
 
@@ -96,6 +104,14 @@ form{
 div.formTitles{
     color: #FFE4C4;
     font-size: 13px;
+}
+section[name="Offense"] span{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+section[name="Defense"] span{
+    padding-left: 25px;
+    padding-right: 25px;
 }
 section[name="Sockets"] span{
     padding-left: 25px;
