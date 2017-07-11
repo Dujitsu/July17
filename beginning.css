@@ -12,18 +12,17 @@
 input{
     background-color: #0F0F0F;
 }
+select{
+    background-color: #262626;
+    color: #ffddb3;
+    border: solid #8c8c8c 2px;
+}
 ::placeholder{
     color: #FFE4C4;
 }
-.left-aside{
-    width: 250px;
-    float: left;
-    background-color:black;
-}
-
 #beginning{
     background-color: #0F0F0F;
-    border: solid gray 2px;
+    border: solid gray .5px;
     color: gray;
 }
 #beginning h1{
@@ -80,12 +79,15 @@ button[name="protip"]{
 
 
 body {
+width: 600px;
 margin-left: 50px;
 margin-right: 50px;
-border: solid gray 2px;
+/*border: solid gray 2px;*/
 /*background-color: #1B1811;*/
-background-color: #0F0F0F;
-color: #FFE4C4;
+/*background-color: #0F0F0F;*/
+background-color: black;
+/*color: #FFE4C4;*/
+color: #a38d6d;
 font-size: 62.5%;
 
 }
@@ -99,7 +101,9 @@ font-size: 62.5%;
     width: 250px;
 }
 form{
+    background-color: #0F0F0F;
     margin: 5px;
+    border: 50px;
 }
 div.formTitles{
     color: #FFE4C4;
@@ -108,6 +112,7 @@ div.formTitles{
 section[name="Offense"] span{
     padding-left: 25px;
     padding-right: 25px;
+    border: 5px;
 }
 section[name="Defense"] span{
     padding-left: 25px;
@@ -165,7 +170,6 @@ section[name="Mods"] button[name="DeleteCondition"]{
     float: right;
 }
 
-
 #Misc{
     border: solid gray 2px;
 }
@@ -180,6 +184,7 @@ section[name="Misc"] input[name="name"], section[name="Misc"] input[name="thread
 
 input[type="text"]{
     width: 50px;
+    border: solid gray 1.5px;
 }
 input[type="text"][name="Name"]{
     width:600px;
@@ -198,7 +203,31 @@ input[type="text"][name="Name"]{
     border-bottom: #fff;
 }
 
-
+button[name="Reset"]{
+    margin-top: 20px;
+    margin-left: 20px;
+    border-top: solid #8c8c8c 2px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    background-color: #262626;
+    color: white;
+}
+input[type="submit"]{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-top: solid #8c8c8c 2px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    color: white;
+    background-color: #262626;
+    height: 40px;
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+}
 footer{
     border-top: solid gray;
     margin: 5px;
