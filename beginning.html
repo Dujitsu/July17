@@ -38,92 +38,93 @@
                     <option value = "6">Standard</option>
                     <option value = "7">Hardcore</option>
                 </select>
-            Type <select id="Type">
-                <option value = "0">any</option>
-                    Weapons
-                <ul>
-                    <li><option value = "1">Generic One-Handed Weapon</option></li>
-                    <li><option value = "2">Generic Two-Handed Weapon</option></li>
-                    <li><option value = "3">Bow</option></li>
-                    <li><option value = "4">Claw</option></li>
-                    <li><option value = "5">Dagger</option></li>
-                    <li><option value = "6">One Hand Axe</option></li>
-                    <li><option value = "7">One Hand Mace</option></li>
-                    <li><option value = "8">One Hand Sword</option></li>
-                    <li><option value = "9">Sceptre</option></li>
-                    <li><option value = "10">Staff</option></li>
-                    <li><option value = "11">Two Hand Axe</option></li>
-                    <li><option value = "12">Two Hand Mace</option></li>
-                    <li><option value = "13">Two Hand Sword</option></li>
-                    <li><option value = "14">Wand</option></li>
-                </ul>
-                    Armour
-                <ul>
-                    <li><option value = "15">Body Armour</option></li>
-                    <li><option value = "16">Boots</option></li>
-                    <li><option value = "17">Gloves</li>
-                    <li><option value = "18">Helmet</li>
-                    <li><option value = "19">Shield</option></li>
-                </ul>
-                    Misc
-                <ul>
-                    <li><option value = "20">Amulet</option></li>
-                    <li><option value = "21">Belt</option></li>
-                    <li><option value = "22">Breach</option></li>
-                    <li><option value = "23">Currency</option></li>
-                    <li><option value = "24">Divination Card</option></li>
-                    <li><option value = "25">Essence</option></li>
-                    <li><option value = "26">Fishing Rods</option></li>
-                    <li><option value = "27">Flask</option></li>
-                    <li><option value = "28">Gem</option></li>
-                    <li><option value = "29">Jewel</option></li>
-                    <li><option value = "30">Leaguestone</option></li>
-                    <li><option value = "31">Map</option></li>
-                    <li><option value = "32">Prophecy</option></li>
-                    <li><option value = "33">Quiver</option></li>
-                    <li><option value = "32">Ring</option></li>
-                    <li><option value = "33">Map Fragment</option></li>
-                </ul>
+<script>
+function narrowBaseOptions(type, base)
+{
+    var type2 = type.options[type.selectedIndex].text;
+    var base2 = base.getElementsByTagName("optgroup");
+    console.log(type2);
+    console.log(base2);
+    var max = base2.length;
+        for(var i = 0; i < max; i++)
+        {
+            if(type2 != base2[i])
+            {
+                base2[i].style.display = "none";
+            }
+        }
+}
+</script>
+
+            Type <select id="Type" onchange="narrowBaseOptions(Type, Base)">
+                <option value = "0" selected>any</option>
+                    <optgroup label="Weapons">
+                        <option value = "1">Generic One-Handed Weapon</option>
+                        <option value = "2">Generic Two-Handed Weapon</option>
+                        <option value = "3">Bow</option>
+                        <option value = "4">Claw</option>
+                        <option value = "5">Dagger</option>
+                        <option value = "6">One Hand Axe</option>
+                        <option value = "7">One Hand Mace</option>
+                        <option value = "8">One Hand Sword</option>
+                        <option value = "9">Sceptre</option>
+                        <option value = "10">Staff</option>
+                        <option value = "11">Two Hand Axe</option>
+                        <option value = "12">Two Hand Mace</option>
+                        <option value = "13">Two Hand Sword</option>
+                        <option value = "14">Wand</option>
+                    </optgroup>
+                    <optgroup label="Armour">
+                        <option value = "15">Body Armour</option>
+                        <option value = "16">Boots</option>
+                        <option value = "17">Gloves</option>
+                        <option value = "18">Helmet</option>
+                        <option value = "19">Shield</option>
+                    </optgroup>
+                    <optgroup label="Misc">
+                        <option value = "20">Amulet</option>
+                        <option value = "21">Belt</option>
+                        <option value = "22">Breach</option>
+                        <option value = "23">Currency</option>
+                        <option value = "24">Divination Card</option>
+                        <option value = "25">Essence</option>
+                        <option value = "26">Fishing Rods</option>
+                        <option value = "27">Flask</option>
+                        <option value = "28">Gem</option>
+                        <option value = "29">Jewel</option>
+                        <option value = "30">Leaguestone</option>
+                        <option value = "31">Map</option>
+                        <option value = "32">Prophecy</option>
+                        <option value = "33">Quiver</option>
+                        <option value = "32">Ring</option>
+                        <option value = "33">Map Fragment</option>
+                    </optgroup>
             </select>
 
             Base <select id="Base">
-                <option value = "0">any</option>
-                    Helmet
-                <ul>
-                    <li><option value = "1">Aventail Helmet</option></li>
-                    <li><option value = "2">Barbute Helmet</option></li>
-                    <li><option value = "3">Battered Helm</option></li>
-                    <li><option value = "4">Bone Circlet</option></li>
-                    <li><option value = "5">Callous Mask</option></li>
-                    <li><option value = "6">Close Helmet</option></li>
-                    <li><option value = "7">Cone Helmet</option></li>
-                    <li><option value = "8">Crusader Helmet</option></li>
-                    <li><option value = "9">Deicide Mask</option></li>
-                    <li><option value = "10">Eternal Burgonet</option></li>
-                    <li><option value = "11">Ezomyte Burgonet</option></li>
-                    <li><option value = "12">Fencer Helm</option></li>
-                    <li><option value = "13">Festival Mask</option></li>
-                    <li><option value = "14">Fluted Bascinet</option></li>
-                    <li><option value = "15">Gilded Sallet</option></li>
-                    <li><option value = "16">Gladiator Helmet</option></li>
-                    <li><option value = "17">Golden Mask</option></li>
-                    <li><option value = "18">Golden Wreath</option></li>
-                    <li><option value = "19">Great Crown</option></li>
-                    <li><option value = "20">Great Helmet</option></li>
-                    <li><option value = "21">Harlequin Mask</option></li>
-                    <li><option value = "22">Hubris Circlet</option></li>
-                    <li><option value = "23">Hunter Hood</option></li>
-                    <li><option value = "24">Iron Circlet</option></li>
-                    <li><option value = "25">Iron Hat</option></li>
-                    <li><option value = "26">Iron Mask</option></li>
+                <option value = "0" selected = "selected">any</option>
+                <optgroup label = "Bow" id="baseBow"> <option value = "0">Assassin Bow</optgroup>
+                <optgroup label = "Claw"> <option value = "0">Awl</optgroup>
+                <optgroup label = "Dagger"> <option value = "0">Ambusher</optgroup>
+                <optgroup label = "One Hand Axe"> <option value = "0">Arming Axe</option> </optgroup>
+                <optgroup label = "One Hand Mace"> <option value = "0">Ancestral Club</option> </optgroup>
+                <optgroup label = "One Hand Sword"> <option value = "0">Ancient Sword</option> </optgroup>
+                <optgroup label = "Sceptre"> <option value = "0">Abyssal Sceptre</optgroup>
+                <optgroup label = "Staff"> <option value = "0">Colled Staff</optgroup>
+                <optgroup label = "Two Hand Axe"> <option value = "0">Abyssal Axe</optgroup>
+                <optgroup label = "Two Hand Mace"> <option value = "0">Brass Maul</optgroup>
+                <optgroup label = "Two Hand Sword"> <option value = "0">Bastard Sword</optgroup>
+                <optgroup label = "Wand" id="baseWand"> <option value = "0">Carved Wand</option> </optgroup>
 
-                    <li><option value = "18">Golden Wreath</option></li>
-                    <li><option value = "18">Golden Wreath</option></li>
-                    <li><option value = "18">Golden Wreath</option></li>
-                    <li><option value = "18">Golden Wreath</option></li>
-                    <li><option value = "18">Golden Wreath</option></li>
-                </ul>
-                </option>
+                <optgroup label = "Body Armour"> <option value = "0">Arena Plate</optgroup>
+                <optgroup label = "Boots"> <option value = "0">Ambush Boots</optgroup>
+                <optgroup label = "Gloves"> <option value = "0">Ambush Mitts</optgroup>
+                <optgroup label = "Helmet"> <option value = "1">Aventail Helmet</option> </optgroup>
+                <optgroup label = "Shield"> <option value = "0">Alder Spiked Shield</optgroup>
+                <optgroup label = "Amulet"> <option value = "0">Agate Amulet</optgroup>
+                <optgroup label = "Belt"> <option value = "0">Chain Belt</optgroup>
+                <optgroup label = "Breach"> <option value = "0">Ancient Reliquary Key</optgroup>
+                <optgroup label = "Currency"> <option value = "0">Albino Rhoa Feather</optgroup>
             </select><br>
                     
             Name<input type="text" name="Name"><br><br>

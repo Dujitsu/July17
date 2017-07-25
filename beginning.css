@@ -17,6 +17,11 @@ select{
     color: #ffddb3;
     border: solid #8c8c8c 2px;
 }
+optgroup{
+    background-color: #0F0F0F;
+    font-weight: bold;
+}
+
 ::placeholder{
     color: #FFE4C4;
 }
@@ -89,8 +94,8 @@ background-color: black;
 /*color: #FFE4C4;*/
 color: #a38d6d;
 font-size: 62.5%;
-
 }
+
 #beginning button[name="currencyMarket"]{
     color:black;
     font-weight: bold;
