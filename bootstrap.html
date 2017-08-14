@@ -1,0 +1,424 @@
+
+
+
+<!--
+<div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3> 
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+  </div>
+</div>
+-->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="beginning.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<section id="wrapper">
+<body>
+    <div class="container">
+        <div id="beginning">
+            <div class="row">
+            <div class = "col-lg-12">
+                <h1>Path of Exile shops indexer
+                    <button type="button" name="currencyMarket">currency market</button>
+                </h1>
+                    <br>
+                <div class="col-lg-12">
+                    <h4>
+                        <button type="button" name="protip" class="btn btn info">Protip</button> Confused? Take a short <a href="www.google.com" style="color: #fff;">tutorial</a>.
+                        <span>Theme:<a href="www.google.com">White</a> / <a href="www.google.com">Dark</a></span>
+                    </h4>
+                </div>
+            </div>
+            </div>
+        </div>
+
+       <div class = "row">
+            <div class = "col-lg-12">
+                <hr>
+                <div id="advertise"><h1>[ allan please add advertisement ]</h1></div>
+                <hr>
+                <div id="tempButtons">
+                    <button type="button" name="search">Search for items</button>
+                    <button type="button" name="import">Import item data</button>
+                    <button type="button" name="reset">Reset</button>
+            </div>
+        </div>
+       
+    
+<!--
+    col-xs
+    col-sm
+    col-md
+    col-lg
+    col-xl
+-->
+    
+    <form id=showcaseForm">
+        <div id = "LeagueTypeBaseRow" class = "row">
+        <div id = "League" class = "col-lg-4">
+                    <span>League</span>
+                    &nbsp;&nbsp;
+                <select id="LeagueDropdown">
+                    <option value = "0">Legacy</option>
+                    <option value = "1">Hardcore Legacy</option>
+                    <option value = "2">2 Week Mayhem (JRE092)</option>
+                    <option value = "3">2 Week Mayhem HC (JRE091)</option>
+                    <option value = "4">Beta Standard</option>
+                    <option value = "5">Beta Hardcore</option>
+                    <option value = "6">Standard</option>
+                    <option value = "7">Hardcore</option>
+                </select>
+        </div>
+
+        <div id = "Type2" class = "dropdown col-lg-4">
+            Type <select id="Type" onchange="narrowBaseOptions(Type, Base)">
+                <option value = "0" selected="selected" >any</option>
+                    <optgroup label="Weapons">
+                        <option value = "1">Generic One-Handed Weapon</option>
+                        <option value = "2">Generic Two-Handed Weapon</option>
+                        <option value = "3">Bow</option>
+                        <option value = "4">Claw</option>
+                        <option value = "5">Dagger</option>
+                        <option value = "6">One Hand Axe</option>
+                        <option value = "7">One Hand Mace</option>
+                        <option value = "8">One Hand Sword</option>
+                        <option value = "9">Sceptre</option>
+                        <option value = "10">Staff</option>
+                        <option value = "11">Two Hand Axe</option>
+                        <option value = "12">Two Hand Mace</option>
+                        <option value = "13">Two Hand Sword</option>
+                        <option value = "14">Wand</option>
+                    </optgroup>
+                    <optgroup label="Armour">
+                        <option value = "15">Body Armour</option>
+                        <option value = "16">Boots</option>
+                        <option value = "17">Gloves</option>
+                        <option value = "18">Helmet</option>
+                        <option value = "19">Shield</option>
+                    </optgroup>
+                    <optgroup label="Misc">
+                        <option value = "20">Amulet</option>
+                        <option value = "21">Belt</option>
+                        <option value = "22">Breach</option>
+                        <option value = "23">Currency</option>
+                        <option value = "24">Divination Card</option>
+                        <option value = "25">Essence</option>
+                        <option value = "26">Fishing Rods</option>
+                        <option value = "27">Flask</option>
+                        <option value = "28">Gem</option>
+                        <option value = "29">Jewel</option>
+                        <option value = "30">Leaguestone</option>
+                        <option value = "31">Map</option>
+                        <option value = "32">Prophecy</option>
+                        <option value = "33">Quiver</option>
+                        <option value = "32">Ring</option>
+                        <option value = "33">Map Fragment</option>
+                    </optgroup>
+            </select>
+        </div>
+        <div id="Base" class = "col-lg-4">
+            Base <select id="Base">
+                <option value = "0" selected = "selected">any</option>
+                <optgroup label = "Bow" id="baseBow"> <option value = "1">Assassin Bow</optgroup>
+                <optgroup label = "Claw"> <option value = "2">Awl</optgroup>
+                <optgroup label = "Dagger"> <option value = "3">Ambusher</optgroup>
+                <optgroup label = "One Hand Axe"> <option value = "4">Arming Axe</option> </optgroup>
+                <optgroup label = "One Hand Mace"> <option value = "5">Ancestral Club</option> </optgroup>
+                <optgroup label = "One Hand Sword"> <option value = "6">Ancient Sword</option> </optgroup>
+                <optgroup label = "Sceptre"> <option value = "7">Abyssal Sceptre</optgroup>
+                <optgroup label = "Staff"> <option value = "8">Colled Staff</optgroup>
+                <optgroup label = "Two Hand Axe"> <option value = "9">Abyssal Axe</optgroup>
+                <optgroup label = "Two Hand Mace"> <option value = "10">Brass Maul</optgroup>
+                <optgroup label = "Two Hand Sword"> <option value = "11">Bastard Sword</optgroup>
+                <optgroup label = "Wand"> <option value = "12">Carved Wand</option> </optgroup>
+
+                <optgroup label = "Body Armour"> <option value = "13">Arena Plate</optgroup>
+                <optgroup label = "Boots"> <option value = "14">Ambush Boots</optgroup>
+                <optgroup label = "Gloves"> <option value = "15">Ambush Mitts</optgroup>
+                <optgroup label = "Helmet"> <option value = "16">Aventail Helmet</option> </optgroup>
+                <optgroup label = "Shield"> <option value = "17">Alder Spiked Shield</optgroup>
+                <optgroup label = "Amulet"> <option value = "18">Agate Amulet</optgroup>
+                <optgroup label = "Belt"> <option value = "19">Chain Belt</optgroup>
+                <optgroup label = "Breach"> <option value = "20">Ancient Reliquary Key</optgroup>
+                <optgroup label = "Currency"> <option value = "21">Albino Rhoa Feather</optgroup>
+            </select><br>
+        </div>
+    </div>
+
+
+    <div id = "NameRow" class = "row">
+        <div id = "Name" class = "col-lg-12">&nbsp; Name &nbsp;&nbsp;&nbsp;<input type="text" name="Name"><br><br></div>
+    </div>
+
+        <section name="Offense">
+            <div class="formTitles"><h3>Offense</h3></div></br>
+                <div id = "OffenseTop" class="row">
+                    <div class = "col-lg-12">
+                    <span>Damage</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                        &nbsp;
+                    <span>APS</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    <span>Crit. Strike</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                </div>
+                        
+                <div id = "OffenseBottom" class = "row">
+                    <div class = "col-lg-12">
+                    <span>DPS</span> &nbsp;<input type="text" placeholder="min"><input type="text" placeholder="max">
+                    <span>eDPS</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>pDPS</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br><br>
+                    </div>
+                </div>
+                </section>
+
+        <section name="Defense">
+            <div class="formTitles"><h3>Defense</h3></div><br>
+                    <span>Armour</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    <span>Evasion</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    <span>Shield</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br>
+                        <br>&nbsp;&nbsp;
+                    <span>Block</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br><br>
+                </section>
+
+        <section name="Sockets">
+            <div class="formTitles"><h3>Sockets</h3></div><br>
+                <div id = "SocketsTop" class = "row">
+                    <div class = "col-lg-1"></div>
+                    <div class = "col-lg-3">
+                        <span>Sockets</span> <input type="text" placeholder="min"><input type="text" placeholder="max">   
+                    </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <div class = "col-lg-3">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>Links</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                        <br>
+                    <div class = "col-lg-5"></div>
+                </div>
+        </section>
+                    <br>
+        <section name="Sockets2">
+            <div id="SocketsBottom" class = "row">
+                <div class = "col-lg-1"></div>
+                <div class = "col-lg-3">
+                    &nbsp;&nbsp;<span>Colors</span>
+                    &nbsp;
+                    <input type="text" name="R" placeholder="R"><input type="text" name="G" placeholder="G"><input type="text" name="B" placeholder="B"><input type="text" name="W" placeholder="W">
+                </div>
+                    
+                <div class = "col-lg-3">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;<span>Linked</span> 
+                    &nbsp;<input type="text" name="R" placeholder="R"><input type="text" name="G" placeholder="G"><input type="text" name="B" placeholder="B"><input type="text" name="W" placeholder="W">
+                    <br><br>
+                </div>
+                <div class = "col-lg-5"></div>
+            </div>
+        </section>
+      
+        <section name="Requirements">
+            <div class="formTitles"><h3>Requirements</h3></div><br>
+                <div id = "RequirementsRow" class = "row">
+                    <div class = "col-lg-3">
+                        <span>Level</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                    <div class = "col-lg-3">
+                        <span>Strength</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                    <div class = "col-lg-3">
+                        <span>Dexterity</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                    <div class = "col-lg-3">
+                        <span>Intelligence</span> <input type="text" placeholder="min"><input type="text" placeholder="max"><br><br>
+                    </div>
+                </div>
+        </section>
+
+        <section name="Mods" id="ModsJS">
+            <div class="formTitles"><h3>Mods</h3></div><br>
+                <div class = "row">
+                    <div class = "col-lg-12">
+                        <select class="ModsClass">
+                            <option>---</option>
+                            <option value="0">Option 1</option>
+                            <option value="1">Option 1</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" placeholder="min"><input type="text" placeholder="max">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button name="cancel">X</button><br><br>
+                    
+                        <button name="AddMod" onclick="addNewMod()">Add Mod</button><br><br>
+                        <select id="ModsDropdown" class="Conditions">
+                            <ul>
+                            <li><option value="0">And</option></li>
+                            <li><option value="1">Not</option></li>
+                            <li><option value="2">Count</option></li>
+                            <li><option value="3">Sum</option></li>
+                            <li><option value="4">If</option></li>
+                            </ul>
+                        </select>
+                    <span>All specified mods must exist and match their values.</span>
+                    <button name="DeleteCondition">Delete Conditions</button>
+                </div>
+                    <br><br>
+        </section>
+</body>
+                    <hr/>
+
+<!-------------------------------------------------------------------------------------------------------------------------- -->
+
+
+        <section name="Misc">
+            <div class="formTitles"><h3>Misc</h3></div>
+                <div class = "row">
+                    <div class = "col-lg-12">
+                        <span>Quality</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                        <span>Level/Tier</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                        <span>Itemlevel</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>Rarity</span>
+                            <select id = "Rarity">
+                                <ul>
+                                    <li><option value="0">any</option></li>
+                                    <li><option value="1">Normal</option></li>
+                                    <li><option value="2">Magic</option></li>
+                                    <li><option value="3">Rare</option></li>
+                                    <li><option value="4">Unique</option></li>
+                                    <li><option value="5">Relic</option></li>
+                                </ul>
+                            </select><br>
+                    </div>
+
+                    <div class = "col-lg-12">
+                            <span>Seller</span>
+                                &nbsp;&nbsp;
+                            <input type="text" name="name" placeholder="name">
+                            <span>Thread</span> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" name="thread" placeholder="#">
+                            <span>Identified</span> 
+                            <select id = "Identified">
+                                <ul>
+                                    <li><option value="0">either</option></li>
+                                    <li><option value="1">Yes</option></li>
+                                    <li><option value="2">No</option></li>
+                                </ul>
+                            </select>
+                        <span>Corrupted</span>
+                            <select id = "Corrupted">
+                                <ul>
+                                    <li><option value="0">either</option></li>
+                                    <li><option value="1">Yes</option></li>
+                                    <li><option value="2">No</option></li>
+                                </ul>
+                            </select><br>
+                    </div>
+
+                    <div class = "col-lg-12">
+                            <span>Online only</span> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" name="Online"/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>Buyout</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select id = "Buyout">
+                                <ul>
+                                    <li><option value="0">either</option></li>
+                                    <li><option value="1">Yes</option></li>
+                                    <li><option value="2">No</option></li>
+                                </ul>
+                            </select>
+                            <span>Alternative Art</span> <input type="checkbox" name="AltArt"/>
+                            <span>Normalize Quality</span> <input type="checkbox" name="NormalizeQuality"/>
+                            <br>
+                    </div>
+
+                    <div class = "col-lg-12">
+                            <span>Buyout</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                            <select id = "Currency">
+                                <ul>
+                                    <li><option value="0">select currency</option></li>
+                                    <li><option value="1">Blessed Orb</option></li>
+                                    <li><option value="2">Cartographer's Chisel</option></li>
+                                </ul>
+                            </select>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>Crafted</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            <select id = "Crafted">
+                                <ul>
+                                    <li><option value="0">either</option></li>
+                                    <li><option value="1">Yes</option></li>
+                                    <li><option value="2">No</option></li>
+                                </ul>
+                            </select>
+                            <span>Enchanted</span> 
+                            <select id = "Enchanted">
+                                <ul>
+                                    <li><option value="0">either</option></li>
+                                    <li><option value="1">Yes</option></li>
+                                    <li><option value="2">No</option></li>
+                                </ul>
+                            </select><br>
+                    </div>
+                </div>
+        </section>
+                        <div style = "border-top: solid gray 2px;">
+                                <button name="Reset">Reset</button>
+                                <input type="submit" value="Search!">
+                                <br><br><br>
+                                
+                        </div>
+                    </form>
+                        <footer id="myFooter">
+                            <h4>This site is fan-made and not affliated with Grinding Gear Games in any way.<br>
+                                <a href="www.google.com">Privacy Policy</a> | <a href="www.google.com">Forum Thread</a> | <a href="www.google.com">Buyout Tags</a> | This page was generated on search-6 poe.trade.
+                            </h4>
+                        </footer>
+            </div>
+<script>
+function narrowBaseOptions(type, base)
+{
+    let type2 = type.options[type.selectedIndex].text;
+    let base2 = base.getElementsByTagName("optgroup");
+    let max = base2.length;
+        for(let i = 0; i < max; i++)
+        {
+            if(type2 != base2[i].label)
+            {
+                base2[i].style.display = "none";
+            }
+            else if(type2 == base2[i].label)
+            {
+                base2[i].style.display = "block";
+            }
+        }
+}
+</script>
+            </html>
