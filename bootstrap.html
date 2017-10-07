@@ -1,42 +1,15 @@
-
-
-
-<!--
-<div class="jumbotron text-center">
-  <h1>My First Bootstrap Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3> 
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-  </div>
-</div>
--->
-
 <!DOCTYPE html>
+<html lang = "en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="beginning.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<section id="wrapper">
+<section id="wrapper" name = "wrapper1">
 <body>
     <div class="container">
         <div id="beginning">
@@ -45,11 +18,11 @@
                 <h1>Path of Exile shops indexer
                     <button type="button" name="currencyMarket">currency market</button>
                 </h1>
-                    <br>
+                    <br/>
                 <div class="col-lg-12">
                     <h4>
-                        <button type="button" name="protip" class="btn btn info">Protip</button> Confused? Take a short <a href="www.google.com" style="color: #fff;">tutorial</a>.
-                        <span>Theme:<a href="www.google.com">White</a> / <a href="www.google.com">Dark</a></span>
+                        <button type="button" id="protip">Protip</button> Confused? Take a short <a href="#" style="color: #fff;">tutorial</a>.
+                        <span>Theme:<a href="#">White</a> / <a href="#">Dark</a></span>
                     </h4>
                 </div>
             </div>
@@ -64,33 +37,24 @@
                 <div id="tempButtons">
                     <button type="button" name="search">Search for items</button>
                     <button type="button" name="import">Import item data</button>
-                    <button type="button" name="reset">Reset</button>
+                    <button type="button" name="reset" onclick = "reloadPage()">Reset</button>
             </div>
         </div>
-       
     
-<!--
-    col-xs
-    col-sm
-    col-md
-    col-lg
-    col-xl
--->
-    
-    <form id=showcaseForm">
-        <div id = "LeagueTypeBaseRow" class = "row">
+<form id=showcaseForm">
+    <div id = "LeagueTypeBaseRow" class = "row">
         <div id = "League" class = "col-lg-4">
                     <span>League</span>
                     &nbsp;&nbsp;
                 <select id="LeagueDropdown">
-                    <option value = "0">Legacy</option>
-                    <option value = "1">Hardcore Legacy</option>
-                    <option value = "2">2 Week Mayhem (JRE092)</option>
-                    <option value = "3">2 Week Mayhem HC (JRE091)</option>
-                    <option value = "4">Beta Standard</option>
-                    <option value = "5">Beta Hardcore</option>
-                    <option value = "6">Standard</option>
-                    <option value = "7">Hardcore</option>
+                    <option> Legacy</option>
+                    <option> Hardcore Legacy</option>
+                    <option> 2 Week Mayhem (JRE092)</option>
+                    <option> 2 Week Mayhem HC (JRE091)</option>
+                    <option> Beta Standard</option>
+                    <option> Beta Hardcore</option>
+                    <option> Standard</option>
+                    <option> Hardcore</option>
                 </select>
         </div>
 
@@ -98,80 +62,95 @@
             Type <select id="Type" onchange="narrowBaseOptions(Type, Base)">
                 <option value = "0" selected="selected" >any</option>
                     <optgroup label="Weapons">
-                        <option value = "1">Generic One-Handed Weapon</option>
-                        <option value = "2">Generic Two-Handed Weapon</option>
-                        <option value = "3">Bow</option>
-                        <option value = "4">Claw</option>
-                        <option value = "5">Dagger</option>
-                        <option value = "6">One Hand Axe</option>
-                        <option value = "7">One Hand Mace</option>
-                        <option value = "8">One Hand Sword</option>
-                        <option value = "9">Sceptre</option>
-                        <option value = "10">Staff</option>
-                        <option value = "11">Two Hand Axe</option>
-                        <option value = "12">Two Hand Mace</option>
-                        <option value = "13">Two Hand Sword</option>
-                        <option value = "14">Wand</option>
+                        <option> Generic One-Handed Weapon</option>
+                        <option> Generic Two-Handed Weapon</option>
+                        <option> Bow</option>
+                        <option> Claw</option>
+                        <option> Dagger</option>
+                        <option> One Hand Axe</option>
+                        <option> One Hand Mace</option>
+                        <option> One Hand Sword</option>
+                        <option> Sceptre</option>
+                        <option> Staff</option>
+                        <option> Two Hand Axe</option>
+                        <option> Two Hand Mace</option>
+                        <option> Two Hand Sword</option>
+                        <option> Wand</option>
                     </optgroup>
                     <optgroup label="Armour">
-                        <option value = "15">Body Armour</option>
-                        <option value = "16">Boots</option>
-                        <option value = "17">Gloves</option>
-                        <option value = "18">Helmet</option>
-                        <option value = "19">Shield</option>
+                        <option> Body Armour</option>
+                        <option> Boots</option>
+                        <option> Gloves</option>
+                        <option> Helmet</option>
+                        <option> Shield</option>
                     </optgroup>
                     <optgroup label="Misc">
-                        <option value = "20">Amulet</option>
-                        <option value = "21">Belt</option>
-                        <option value = "22">Breach</option>
-                        <option value = "23">Currency</option>
-                        <option value = "24">Divination Card</option>
-                        <option value = "25">Essence</option>
-                        <option value = "26">Fishing Rods</option>
-                        <option value = "27">Flask</option>
-                        <option value = "28">Gem</option>
-                        <option value = "29">Jewel</option>
-                        <option value = "30">Leaguestone</option>
-                        <option value = "31">Map</option>
-                        <option value = "32">Prophecy</option>
-                        <option value = "33">Quiver</option>
-                        <option value = "32">Ring</option>
-                        <option value = "33">Map Fragment</option>
+                        <option> Amulet</option>
+                        <option> Belt</option>
+                        <option> Breach</option>
+                        <option> Currency</option>
+                        <option> Divination Card</option>
+                        <option> Essence</option>
+                        <option> Fishing Rods</option>
+                        <option> Flask</option>
+                        <option> Gem</option>
+                        <option> Jewel</option>
+                        <option> Leaguestone</option>
+                        <option> Map</option>
+                        <option> Prophecy</option>
+                        <option> Quiver</option>
+                        <option> Ring</option>
+                        <option> Map Fragment</option>
                     </optgroup>
             </select>
         </div>
         <div id="Base" class = "col-lg-4">
             Base <select id="Base">
-                <option value = "0" selected = "selected">any</option>
-                <optgroup label = "Bow" id="baseBow"> <option value = "1">Assassin Bow</optgroup>
-                <optgroup label = "Claw"> <option value = "2">Awl</optgroup>
-                <optgroup label = "Dagger"> <option value = "3">Ambusher</optgroup>
-                <optgroup label = "One Hand Axe"> <option value = "4">Arming Axe</option> </optgroup>
-                <optgroup label = "One Hand Mace"> <option value = "5">Ancestral Club</option> </optgroup>
-                <optgroup label = "One Hand Sword"> <option value = "6">Ancient Sword</option> </optgroup>
-                <optgroup label = "Sceptre"> <option value = "7">Abyssal Sceptre</optgroup>
-                <optgroup label = "Staff"> <option value = "8">Colled Staff</optgroup>
-                <optgroup label = "Two Hand Axe"> <option value = "9">Abyssal Axe</optgroup>
-                <optgroup label = "Two Hand Mace"> <option value = "10">Brass Maul</optgroup>
-                <optgroup label = "Two Hand Sword"> <option value = "11">Bastard Sword</optgroup>
-                <optgroup label = "Wand"> <option value = "12">Carved Wand</option> </optgroup>
 
-                <optgroup label = "Body Armour"> <option value = "13">Arena Plate</optgroup>
-                <optgroup label = "Boots"> <option value = "14">Ambush Boots</optgroup>
-                <optgroup label = "Gloves"> <option value = "15">Ambush Mitts</optgroup>
-                <optgroup label = "Helmet"> <option value = "16">Aventail Helmet</option> </optgroup>
-                <optgroup label = "Shield"> <option value = "17">Alder Spiked Shield</optgroup>
-                <optgroup label = "Amulet"> <option value = "18">Agate Amulet</optgroup>
-                <optgroup label = "Belt"> <option value = "19">Chain Belt</optgroup>
-                <optgroup label = "Breach"> <option value = "20">Ancient Reliquary Key</optgroup>
-                <optgroup label = "Currency"> <option value = "21">Albino Rhoa Feather</optgroup>
-            </select><br>
+                <option value = "0" selected = "selected">any</option>
+                <optgroup label = "Bow">            <option> Assassin Bow</option></optgroup>
+                <optgroup label = "Claw">           <option> Awl</option></optgroup>
+                <optgroup label = "Dagger">         <option> Ambusher</option></optgroup>
+                <optgroup label = "One Hand Axe">   <option> Arming Axe</option></optgroup>
+                <optgroup label = "One Hand Mace">  <option> Ancestral Club</option></optgroup>
+                <optgroup label = "One Hand Sword"> <option> Ancient Sword</option></optgroup>
+                <optgroup label = "Sceptre">        <option> Abyssal Sceptre</option></optgroup>
+                <optgroup label = "Staff">          <option> Colled Staff</option></optgroup>
+                <optgroup label = "Two Hand Axe">   <option> Abyssal Axe</option></optgroup>
+                <optgroup label = "Two Hand Mace">  <option> Brass Maul</option></optgroup>
+                <optgroup label = "Two Hand Sword"> <option> Bastard Sword</option></optgroup>
+                <optgroup label = "Wand">           <option> Carved Wand</option></optgroup>
+
+                <optgroup label = "Body Armour">    <option> Arena Plate</option></optgroup>
+                <optgroup label = "Boots">          <option> Ambush Boots</option></optgroup>
+                <optgroup label = "Gloves">         <option> Ambush Mitts</option></optgroup>
+                <optgroup label = "Helmet">         <option> Aventail Helmet</option></optgroup>
+                <optgroup label = "Shield">         <option> Alder Spiked Shield</option></optgroup>
+
+                <optgroup label = "Amulet">         <option> Agate Amulet</option></optgroup>
+                <optgroup label = "Belt">           <option> Chain Belt</option></optgroup>
+                <optgroup label = "Breach">         <option> Ancient Reliquary Key</option></optgroup>
+                <optgroup label = "Currency">       <option> Albino Rhoa Feather</option></optgroup>
+                <optgroup label = "Divination Card"><option> Divination Card</option></optgroup>
+                <optgroup label = "Essence">        <option> Essence</option></optgroup>
+                <optgroup label = "Fishing Rods">   <option> Fishing Rods</option></optgroup>
+                <optgroup label = "Flask">          <option> Flask</option></optgroup>
+                <optgroup label = "Gem">            <option> Gem</option></optgroup>
+                <optgroup label = "Jewel">          <option> Jewel</option></optgroup>
+                <optgroup label = "Leaguestone">    <option> Leaguestone</option></optgroup>
+                <optgroup label = "Map">            <option> Map</option></optgroup>
+                <optgroup label = "Prophecy">       <option> Prophecy</option></optgroup>
+                <optgroup label = "Quiver">         <option> Quiver</option></optgroup>
+                <optgroup label = "Ring">           <option> Ring</option></optgroup>
+                <optgroup label = "Map Fragment">   <option> Map Fragment</option></optgroup>
+        
+            </select><br/>
         </div>
     </div>
 
 
     <div id = "NameRow" class = "row">
-        <div id = "Name" class = "col-lg-12">&nbsp; Name &nbsp;&nbsp;&nbsp;<input type="text" name="Name"><br><br></div>
+        <div id = "Name" class = "col-lg-12">&nbsp; Name &nbsp;&nbsp;&nbsp;<input type="text" name="Name"><br/><br/></div>
     </div>
 
         <section name="Offense">
@@ -190,22 +169,22 @@
                     <span>DPS</span> &nbsp;<input type="text" placeholder="min"><input type="text" placeholder="max">
                     <span>eDPS</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span>pDPS</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br><br>
+                    <span>pDPS</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br><br/>
                     </div>
                 </div>
-                </section>
+        </section>
 
         <section name="Defense">
-            <div class="formTitles"><h3>Defense</h3></div><br>
+            <div class="formTitles"><h3>Defense</h3></div><br/>
                     <span>Armour</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
                     <span>Evasion</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
                     <span>Shield</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br>
-                        <br>&nbsp;&nbsp;
-                    <span>Block</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br><br>
-                </section>
+                        <br/>&nbsp;&nbsp;
+                    <span>Block</span> <input type="text" placeholder="min"><input type="text" placeholder="max"></br><br/>
+        </section>
 
         <section name="Sockets">
-            <div class="formTitles"><h3>Sockets</h3></div><br>
+            <div class="formTitles"><h3>Sockets</h3></div><br/>
                 <div id = "SocketsTop" class = "row">
                     <div class = "col-lg-1"></div>
                     <div class = "col-lg-3">
@@ -217,11 +196,11 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span>Links</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
                     </div>
-                        <br>
+                        <br/>
                     <div class = "col-lg-5"></div>
                 </div>
         </section>
-                    <br>
+                    <br/>
         <section name="Sockets2">
             <div id="SocketsBottom" class = "row">
                 <div class = "col-lg-1"></div>
@@ -235,14 +214,14 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;<span>Linked</span> 
                     &nbsp;<input type="text" name="R" placeholder="R"><input type="text" name="G" placeholder="G"><input type="text" name="B" placeholder="B"><input type="text" name="W" placeholder="W">
-                    <br><br>
+                    <br/><br/>
                 </div>
                 <div class = "col-lg-5"></div>
             </div>
         </section>
-      
+        <!-- ------------------------------------------------------------------------------------------------------------------------ -->
         <section name="Requirements">
-            <div class="formTitles"><h3>Requirements</h3></div><br>
+            <div class="formTitles"><h3>Requirements</h3></div><br/>
                 <div id = "RequirementsRow" class = "row">
                     <div class = "col-lg-3">
                         <span>Level</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
@@ -254,55 +233,77 @@
                         <span>Dexterity</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
                     </div>
                     <div class = "col-lg-3">
-                        <span>Intelligence</span> <input type="text" placeholder="min"><input type="text" placeholder="max"><br><br>
+                        <span>Intelligence</span> <input type="text" placeholder="min"><input type="text" placeholder="max"><br/><br/>
                     </div>
                 </div>
         </section>
-
+        <!-- ------------------------------------------------------------------------------------------------------------------------ -->
         <section name="Mods" id="ModsJS">
-            <div class="formTitles"><h3>Mods</h3></div><br>
+            <div class="formTitles"><h3>Mods</h3></div><br/>
                 <div class = "row">
                     <div class = "col-lg-12">
-                        <select class="ModsClass">
-                            <option>---</option>
-                            <option value="0">Option 1</option>
-                            <option value="1">Option 1</option>
-                        </select>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" placeholder="min"><input type="text" placeholder="max">
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button name="cancel">X</button><br><br>
-                    
-                        <button name="AddMod" onclick="addNewMod()">Add Mod</button><br><br>
-                        <select id="ModsDropdown" class="Conditions">
-                            <ul>
-                            <li><option value="0">And</option></li>
-                            <li><option value="1">Not</option></li>
-                            <li><option value="2">Count</option></li>
-                            <li><option value="3">Sum</option></li>
-                            <li><option value="4">If</option></li>
-                            </ul>
-                        </select>
-                    <span>All specified mods must exist and match their values.</span>
-                    <button name="DeleteCondition">Delete Conditions</button>
-                </div>
-                    <br><br>
+                        <span id = "filterGroupLocation">
+                                <select class="ModsClass">
+                                    <option>---</option>
+                                    <option value="0">Option 0</option>
+                                    <option value="1">Option 1</option>
+                                </select>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" placeholder="min"><input type="text" placeholder="max">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type = "button" name="deleteMod" onclick = "deleteMode(event)">X</button>
+                                <br/>
+                                <button name="AddMod" type = "button" onclick="addNewElement(event, 'mod')">Add Mod</button><br/><br/>
+                                <select id="ModsConditions" class="Conditions">
+                                <ul>
+                                    <li><option value="0">And</option></li>
+                                    <li><option value="1">Not</option></li>
+                                    <li><option value="2">Count</option></li>
+                                    <li><option value="3">Sum</option></li>
+                                    <li><option value="4">If</option></li>
+                                </ul>
+                                </select>
+                            <span>All specified mods must exist and match their values.</span>
+                            <button type "button" id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button>
+                        </span>
+                    </div>
+                        <br/><br/>
         </section>
-</body>
                     <hr/>
+                <span>
+                    <button id = "addModGroup"  type = "button" onclick = "addNewElement(event, 'group')">Add filter group</button>
+                </span>
+                        
+<!-- ------------------------------------------------------------------------------------------------------------------------ 
 
-<!-------------------------------------------------------------------------------------------------------------------------- -->
-
-
+    <div class = "col-lg-3">
+        <span>Level</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+    </div>
+    <div class = "col-lg-3">
+        <span>Strength</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+    </div>
+    <div class = "col-lg-3">
+        <span>Dexterity</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+    </div>
+    <div class = "col-lg-3">
+        <span>Intelligence</span> <input type="text" placeholder="min"><input type="text" placeholder="max"><br/><br/>
+    </div>
+-->
         <section name="Misc">
             <div class="formTitles"><h3>Misc</h3></div>
                 <div class = "row">
-                    <div class = "col-lg-12">
-                        <span>Quality</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
-                        <span>Level/Tier</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
-                        <span>Itemlevel</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span>Rarity</span>
+                    <div class = "col-lg-3">
+                        <span>Quality   </span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                    <div class = "col-lg-3">
+                        <span>Level/Tier</span> &nbsp;&nbsp;<input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                    <div class = "col-lg-3">
+                        <span>Itemlevel </span> <input type="text" placeholder="min"><input type="text" placeholder="max">
+                    </div>
+                    <div class = "col-lg-3">
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;<span>Rarity</span>
                             <select id = "Rarity">
                                 <ul>
                                     <li><option value="0">any</option></li>
@@ -312,97 +313,127 @@
                                     <li><option value="4">Unique</option></li>
                                     <li><option value="5">Relic</option></li>
                                 </ul>
-                            </select><br>
+                            </select><br/>
                     </div>
-
-                    <div class = "col-lg-12">
-                            <span>Seller</span>
-                                &nbsp;&nbsp;
+                </div>
+                
+                <div class = "row">
+                    <div class = "col-lg-3">
+                        &nbsp;&nbsp;<span>Seller</span>
                             <input type="text" name="name" placeholder="name">
+                    </div>
+                    <div class = "col-lg-3">
                             <span>Thread</span> 
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="text" name="thread" placeholder="#">
+                    </div>
+                    <div class = "col-lg-3">
                             <span>Identified</span> 
                             <select id = "Identified">
                                 <ul>
-                                    <li><option value="0">either</option></li>
-                                    <li><option value="1">Yes</option></li>
-                                    <li><option value="2">No</option></li>
+                                    <li><option> either</option></li>
+                                    <li><option> Yes</option></li>
+                                    <li><option> No</option></li>
                                 </ul>
                             </select>
-                        <span>Corrupted</span>
+                    </div>
+                    <div class = "col-lg-3">
+                        &nbsp;<span>Corrupted</span>
                             <select id = "Corrupted">
                                 <ul>
-                                    <li><option value="0">either</option></li>
-                                    <li><option value="1">Yes</option></li>
-                                    <li><option value="2">No</option></li>
+                                    <li><option> either</option></li>
+                                    <li><option> Yes</option></li>
+                                    <li><option> No</option></li>
                                 </ul>
-                            </select><br>
+                            </select><br/>
                     </div>
-
-                    <div class = "col-lg-12">
-                            <span>Online only</span> 
+                </div>
+                <div class = "row">
+                    <div class = "col-lg-3">
+                        &nbsp;<span>Online</span> 
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="checkbox" name="Online"/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="Online"/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <div class = "col-lg-3">
                             <span>Buyout</span>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <select id = "Buyout">
                                 <ul>
-                                    <li><option value="0">either</option></li>
-                                    <li><option value="1">Yes</option></li>
-                                    <li><option value="2">No</option></li>
+                                    <li><option> either</option></li>
+                                    <li><option> Yes</option></li>
+                                    <li><option> No</option></li>
                                 </ul>
                             </select>
-                            <span>Alternative Art</span> <input type="checkbox" name="AltArt"/>
-                            <span>Normalize Quality</span> <input type="checkbox" name="NormalizeQuality"/>
-                            <br>
                     </div>
-
-                    <div class = "col-lg-12">
+                    <div class = "col-lg-3">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Alt Art  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <input type="checkbox" name="AltArt"/>
+                    </div>
+                    <div class = "col-lg-3">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Quality</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="NormalizeQuality"/>
+                            <br/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-lg-6">
                             <span>Buyout</span> <input type="text" placeholder="min"><input type="text" placeholder="max">
                             <select id = "Currency">
                                 <ul>
-                                    <li><option value="0">select currency</option></li>
-                                    <li><option value="1">Blessed Orb</option></li>
-                                    <li><option value="2">Cartographer's Chisel</option></li>
+                                    <li><option> select currency</option></li>
+                                    <li><option> Blessed Orb</option></li>
+                                    <li><option> Cartographer's Chisel</option></li>
                                 </ul>
                             </select>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span>Crafted</span>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <div class = "col-lg-3">
+                        &nbsp;&nbsp;&nbsp;<span>Crafted</span>
                             <select id = "Crafted">
                                 <ul>
-                                    <li><option value="0">either</option></li>
-                                    <li><option value="1">Yes</option></li>
-                                    <li><option value="2">No</option></li>
+                                    <li><option> either</option></li>
+                                    <li><option> Yes</option></li>
+                                    <li><option> No</option></li>
                                 </ul>
                             </select>
+                    </div>
+                    <div class = "col-lg-3">
                             <span>Enchanted</span> 
                             <select id = "Enchanted">
                                 <ul>
-                                    <li><option value="0">either</option></li>
-                                    <li><option value="1">Yes</option></li>
-                                    <li><option value="2">No</option></li>
+                                    <li><option> either</option></li>
+                                    <li><option> Yes</option></li>
+                                    <li><option> No</option></li>
                                 </ul>
-                            </select><br>
+                            </select><br/>
                     </div>
                 </div>
+                
         </section>
                         <div style = "border-top: solid gray 2px;">
-                                <button name="Reset">Reset</button>
-                                <input type="submit" value="Search!">
-                                <br><br><br>
-                                
+                                <button name="Reset" onclick = "reloadPage()">Reset</button>
+                                <button name="Test" type = "button" onclick = "testing(event)">TestButton</button>
+                                <button name="Test2" type = "button" onclick = "reverse('ImageTrend')">TestButton</button>
+                                <button name="Test3" type = "button" onclick = "myReverseAttempt('ImageTrend')">TestButton</button>
+                                <input  type="submit" value="Search!">
+                                <br/><br/><br/>   
                         </div>
-                    </form>
+>
+</form>
                         <footer id="myFooter">
-                            <h4>This site is fan-made and not affliated with Grinding Gear Games in any way.<br>
-                                <a href="www.google.com">Privacy Policy</a> | <a href="www.google.com">Forum Thread</a> | <a href="www.google.com">Buyout Tags</a> | This page was generated on search-6 poe.trade.
+                            <h4>This site is fan-made and not affliated with Grinding Gear Games in any way.<br/>
+                                <a href="#">Privacy Policy</a> | <a href="#">Forum Thread</a> | <a href="#">Buyout Tags</a> | This page was generated on search-6 poe.trade.
                             </h4>
                         </footer>
-            </div>
+</body>
+</section> <!-- end of wrapper -->
 <script>
+function reverse(toReverse)
+{
+    console.log(toReverse.split(''))
+    console.log(toReverse.split('').reverse())
+    console.log(toReverse.split('').reverse().join(''));
+}
+
 function narrowBaseOptions(type, base)
 {
     let type2 = type.options[type.selectedIndex].text;
@@ -410,15 +441,283 @@ function narrowBaseOptions(type, base)
     let max = base2.length;
         for(let i = 0; i < max; i++)
         {
-            if(type2 != base2[i].label)
-            {
-                base2[i].style.display = "none";
-            }
-            else if(type2 == base2[i].label)
-            {
-                base2[i].style.display = "block";
-            }
+            if (type2 === 'any')             { console.log("Test"); }
+            else if(type2 != base2[i].label) { base2[i].style.display = "none"; }
+            else if(type2 == base2[i].label) { base2[i].style.display = "block"; }
         }
 }
+
+
+
+
+
+
+
+let i = 1;
+function addNewElement(event, htmlType)
+{
+    const element = event.target.parentNode
+    let newElement = document.createElement("span"); /* Doesn't actually insert a span? */
+    newElement.setAttribute('id', htmlType + i);
+    if(htmlType === "mod")
+    {
+        newElement.innerHTML = '<span><br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/></span>';
+        element.insertBefore(newElement, event.target);
+    }
+    else if(htmlType === "group")
+    {
+        element.insertAdjacentHTML('beforebegin', '<span><br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod" onclick = "deleteMode(event)">X</button><br/><button name = "AddMod" type = "button" onclick="addNewElement(event, "mod")">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span name = "existAndMatch">All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button><br/><hr></span>');
+    }
+    i++;
+}
+function addNewGroup(callingElement)
+{
+    let target = document.getElementById(callingElement);
+    let newElement = document.createElement("span");
+    target.insertAdjacentHTML('beforeend', '<br/><br/><br/><button name = "AddMod" type = "button" onclick="dynamicAddElement(event)">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button>');
+}
+function deleteGroup(event)
+{
+    console.log(event.parentNode.id);
+    var x = document.getElementById(event.parentNode.id);
+    console.log(x.parentNode.id);
+}
+function deleteMode(test)
+{
+    x = test.target.parentNode;
+    x.innerHTML = "";
+    x.remove();
+}
+function reloadPage() { window.location.reload(); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function addElementFromInsert(callingElement)
+{
+    console.log(callingElement);
+    let parent = callingElement.parentNode.id;
+    console.log("Testing addelementfrominsert");
+    let element = document.getElementById(parent);
+    let newElement = document.createElement("div");
+    newElement.setAttribute('id', parent + dynamicInsert);
+    console.log("Testing NewElement" + newElement.id);
+    newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
+    console.log(newElement.innerHTML);
+    parent.insertBefore(newElement, callingElement);
+    i++;
+}
+
+
+
+function addElementFromInsert2(callingElement)
+{
+    let parent = document.getElementById("dynamicModsDropdown");
+    let newElement = document.createElement("div");
+    newElement.setAttribute('id', 'gggg3');
+    newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
+    parent.insertBefore(newElement, parent.children[8]);
+
+    console.log("testing" + addElementTest[1].id);
+}
+
+
 </script>
-            </html>
+</html>
+
+
+
+<!-- ----------------------------------------------------------------------------------------- GARBAGE CODE COLLECTION -----------------------------------------------------------------------------------------------
+    
+    function addNewElement2(event, htmlType)
+    {
+        const element = event.target.parentNode;
+        let newElement = document.createElement("span");
+        let htmlToInsert = [];
+        if(htmlType === "mod")
+        {
+            htmlToInsert = ['<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>',
+                            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/>',
+                            '<input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+                            '<button type = "button" name="deleteMod">X</button><br/>'
+                           ]
+            for(let i = 0; i < htmlToInsert.length; i++)
+            {
+                
+            }
+    
+    
+            newElement.setAttribute('id', htmlType + i);
+            element.insertBefore(newElement, event.target);
+        }
+        else if(htmlType === "group")
+        {
+            element.insertAdjacentHTML('beforebegin', '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/><br/><button name = "AddMod" type = "button" onclick="addNewElement(event, "mod")">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button><br/><hr>');
+        }
+        
+        
+        
+        i++;
+    }
+    function addElementFromInsert3(callingElement)
+    {
+        let parent = document.getElementById(callingElement.parentElement);
+        let newElement = document.createElement("div");
+        //let callingChildValue = for (let i = 0; i < parent.children.length; i++){
+        // if(parent.children[i] === callingElement){
+        //    
+        //  }     
+        //}
+        newElement.setAttribute('id', 'gggg3');
+        newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
+        parent.insertBefore(newElement, null);
+    }
+
+    let parent = document.getElementById("dynamicModsDropdown");
+    
+        if ( typeof newElement2 !== 'undefined') {
+            element = document.getElementById("dynamicFilterGroupLocation");
+            element.appendChild(newElement2); 
+        }
+        
+        
+        function addNewElement111(event, htmlType)
+        {
+            console.log(target);
+            const element = document.getElementById(target.parentNode.parentNode.id);
+            let newElement = document.createElement("span");
+            newElement.setAttribute('id', htmlType + i);
+            if(htmlType === "mod")
+            {
+                newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
+            }
+            else if(htmlType === "group")
+            {
+                newElement.innerHTML = '<br/><br/><br/><button name = "AddMod" type = "button" onclick="dynamicAddElement()">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button>';
+            }
+            element.appendChild(newElement);
+            if ( typeof newElement2 !== 'undefined') {
+                element = document.getElementById("dynamicFilterGroupLocation");
+                element.appendChild(newElement2); 
+            }
+            if ( typeof newElement2 !== 'undefined') {
+                console.log(newElement.id);
+                addNewGroup(newElement.id);
+            }
+            i++;
+            return target;
+        }
+    
+    e.parentNode.removeChild(e);
+    for (z=0; z<x.children.length; z++)
+    {
+        x.removeChild(z);
+    }
+
+
+    <input type="text">
+    $("#Base select").prepend("JQUERY");
+
+loadJSON("https://www.pathofexile.com/character-window/get-items?accountName=Duji&character=Wuj", gotData, 'jsonp')
+let data = loadJSON("https://www.pathofexile.com/character-window/get-items?accountName=Duji&character=Wuj");
+https://www.pathofexile.com/character-window/get-characters?accountName=xxx
+https://www.pathofexile.com/character-window/get-items?accountName=xxx&character=xxx //Items equipped on character
+http://www.pathofexile.com/character-window/get-stash-items?eague=standard&tabs=1&tabIndex=1 //Stash probably outdated
+
+Invalid shorthand property initializer error
+    $("#Base").on("click", function(){
+        $('#Base').append($('<option>', {
+            value = "Search",
+            text = ""
+        }));
+    });
+    var newElement = '<br/><div><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"><input type="text" class = "addedInput" placeholder="max">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/></div>'
+    element.insertAdjacentHTML('beforeend', newElement);
+
+
+    let element = document.getElementById("ModsDropdown");
+    let newElement = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>'
+    newElement.setAttribute('id', 'TESTING')
+    element.insertAdjacentHTML('beforeend', newElement);
+
+
+    function addNewMod()
+    {
+        let element = document.getElementById("ModsDropdown");
+        let newElement = document.createElement('div');
+        newElement.setAttribute('id', i);
+        newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"><input type="text" class = "addedInput" placeholder="max">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>'
+        element.appendChild(newElement);
+        i++;
+    }
+    
+    function addFilterSpan() 
+    {
+        let element = document.getElementById("filterGroupLocation");
+        let newElement = document.createElement('span');
+        let testing3 = document.getElementById("modsDropdown");
+        newElement.setAttribute('id', "filter" + x);
+        element.appendChild(newElement, testing3);
+        x++;
+    }
+   
+    
+    
+function testing(){
+    loadJSON("https://www.pathofexile.com/character-window/get-items?accountName=Duji&character=Wuj", gotData, 'jsonp');
+ }
+ function gotData(data){
+     console.log("gotData called");
+ }
+ 
+ newElement.innerHTML = '<br/><hr/><br/><select class="ModsClass"><option>---</option><option value="0">Option 0</option><option value="1">Option 1</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="min"><input type="text" placeholder="max">&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/><br/><br/><button type = "button" name="AddMod" onclick="addNewElement(event, "mod")">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup">Delete Group</button>';
+                                   <br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>
+
+
+                                   function addElementFromInsert2(callingElement)
+                                   {
+                                       let parent = document.getElementById("filterGroupLocation");
+                                       let newElement = document.createElement("h1");
+                                       newElement.innerText = "Testing";
+                                       newElement.setAttribute('id', 'gggg3');
+                                       parent.insertBefore(newElement, parent.children[8]);
+                                   }
+
+
+
+
+-->

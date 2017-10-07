@@ -1,12 +1,12 @@
 /*
 Colors
 
-Form background: #0F0F0F
-Title color: #FFE4C4
-Secondary text: #ffcc99
-Select text: #ffddb3
+Form background:   #0F0F0F
+Title color:       #FFE4C4
+Secondary text:    #ffcc99
+Select text:       #ffddb3
 Select background: #262626
-Placeholder: gray
+Placeholder:        gray
 container background: black
 */
 *{
@@ -19,11 +19,13 @@ container background: black
     width: 900px;
     font-size: 1.3em;
 }*/
-#wrapper{
-    width: 100%;
+
+section [name="wrapper1"]{
+    background-color: white;
 }
 input{
     background-color: #0F0F0F;
+    color: #FDB0B0;
 }
 select{
     background-color: #262626;
@@ -37,7 +39,6 @@ optgroup{
 ::placeholder{
     /*color: #FFE4C4;*/
     color: gray;
-
 }
 #beginning{
     background-color: #0F0F0F;
@@ -60,12 +61,15 @@ optgroup{
 #beginning span{
     float: right;
 }
-button[name="protip"]{
+#protip{
     font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
     background-color: #333333;
     color: white;
     border: none;
 }
+
 #advertise{
     color: gray;
 }
@@ -104,15 +108,6 @@ button[name="protip"]{
     background-color: black;
     border: green solid 4px;
 }
-body {
-margin: 0 auto;
-border: solid gray 2px;
-/*background-color: #1B1811;*/
-/*background-color: #0F0F0F;*/
-background-color: black;
-/*color: #FFE4C4;*/
-color: #a38d6d;
-}
 
 #beginning button[name="currencyMarket"]{
     color:black;
@@ -134,10 +129,10 @@ div.formTitles{
 #LeagueTypeBaseRow, #NameRow, #OffenseBottom{
     margin-left: 5px;
 }
-#LeagueDropdown, #ModsDropdown{
+#LeagueDropdown, #ModsConditions{
     border: solid green 2px;
 }
-#ModsDropdown{
+#ModsConditions{
     color: #FFE4C4;
     width: 8%;
     margin-left: 2%;
@@ -150,7 +145,12 @@ input[type="text"]{
     border: solid gray 1px;
     text-align: center;
 }
-
+.addedInput[type="text"]{
+    width: 50px;
+    height: 2em;
+    border: solid gray 1px;
+    text-align: center;
+}
 input[type="text"][name="Name"]{
     width: 82.25%;
 }
@@ -163,7 +163,8 @@ section[name="Defense"] span{
     padding-left: 25px;
     padding-right: 25px;
 }
-#League, #Type2, #Base, #Name, section[name="Offense"] span, section[name="Defense"] span, section[name="Sockets"] span, section[name="Sockets2"] span, section[name="Requirements"] span, section[name="Mods"] span, section[name="Misc"] span{
+#League, #Type2, #Base, #Name, section[name="Offense"] span, section[name="Defense"] span, section[name="Sockets"] span, section[name="Sockets2"] span, section[name="Requirements"] span,
+    section[name="Mods"] span, section[name="Misc"] span, span[name="existAndMatch"]{
     color: #ffcc99;
     /*color: #ffbf80;*/
 }
@@ -210,12 +211,15 @@ section[name="Requirements"] input{
     padding-left: 5px;
     color: #ffddb3;
 }
-section[name="Mods"] button[name="cancel"]{
+button[name="deleteMod"]{
     width: 40px;
+    font-weight: bold;
+    color: black;
 }
-section[name="Mods"] button[name="AddMod"]{
+button[name="AddMod"]{
     width: 70px;
     font-weight: bold;
+    margin-top: 15px;
     margin-left: 45%;
     color: white;
     border-top: 1px solid white;
@@ -224,10 +228,19 @@ section[name="Mods"] button[name="AddMod"]{
     border-bottom: none;
     background-color: #4d4d4d;
 }
-section[name="Mods"] button[name="DeleteCondition"]{
+#addModGroup, #deleteModGroup{
+    float: right; 
+    margin-right: 5px;
+    color: white;
+    background-color: #4d4d4d;
+    border: none;
+    border-top: 1px solid white;
+    padding: 3px;
+    font-weight: bold;
+}
+section[name="Mods"] button[name="deleteModGroup"]{
     float: right;
 }
-
 #Misc{
     border: solid gray 22px;
 }
@@ -235,8 +248,11 @@ section[name="Misc"] span{
     padding-left: 25px;
     padding-right: 25px;
 }
-section[name="Misc"] input[name="name"], section[name="Misc"] input[name="thread"], section[name="Misc"] #Identified, section[name="Misc"] #Rarity, section[name="Misc"] #Corrupted, section[name="Misc"] #Buyout
-, section[name="Misc"] #Crafted, section[name="Misc"] #Enchanted{
+section[name="Misc"] select{
+    color: #FFE4C4;
+}
+section[name="Misc"] input[name="name"], section[name="Misc"] input[name="thread"], section[name="Misc"] #Identified, section[name="Misc"] #Rarity,
+    section[name="Misc"] #Corrupted, section[name="Misc"] #Buyout, section[name="Misc"] #Crafted, section[name="Misc"] #Enchanted{
     width: 100px;
 }
 
@@ -285,6 +301,7 @@ footer{
 }
 footer h4{
     font-size: 12px;
+    color: #ffcc99;
 }
 footer a{
     color:#FFE4C4;
