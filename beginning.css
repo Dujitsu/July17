@@ -105,8 +105,7 @@ optgroup{
 }
 
 .container{
-    background-color: black;
-    border: green solid 4px;
+    background-color: #0F0F0F;
 }
 
 #beginning button[name="currencyMarket"]{

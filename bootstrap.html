@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="beginning.css">
+    <script src = "bootstrap.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -251,7 +251,7 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="text" placeholder="min"><input type="text" placeholder="max">
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type = "button" name="deleteMod" onclick = "deleteMode(event)">X</button>
+                                <button type = "button" name="deleteMod" onclick = "deleteMod2(event)">X</button>
                                 <br/>
                                 <button name="AddMod" type = "button" onclick="addNewElement(event, 'mod')">Add Mod</button><br/><br/>
                                 <select id="ModsConditions" class="Conditions">
@@ -426,298 +426,39 @@
                         </footer>
 </body>
 </section> <!-- end of wrapper -->
-<script>
-function reverse(toReverse)
-{
-    console.log(toReverse.split(''))
-    console.log(toReverse.split('').reverse())
-    console.log(toReverse.split('').reverse().join(''));
-}
 
-function narrowBaseOptions(type, base)
-{
-    let type2 = type.options[type.selectedIndex].text;
-    let base2 = base.getElementsByTagName("optgroup");
-    let max = base2.length;
-        for(let i = 0; i < max; i++)
-        {
-            if (type2 === 'any')             { console.log("Test"); }
-            else if(type2 != base2[i].label) { base2[i].style.display = "none"; }
-            else if(type2 == base2[i].label) { base2[i].style.display = "block"; }
-        }
-}
+</html>
+<!-- Code used before DocumentFragments
 
-
-
-
-
-
-
-let i = 1;
-function addNewElement(event, htmlType)
+function addNewElement2(event, htmlType)
 {
     const element = event.target.parentNode
-    let newElement = document.createElement("span"); /* Doesn't actually insert a span? */
-    newElement.setAttribute('id', htmlType + i);
+    let newElement = document.createElement("span");
+    newElement.setAttribute('id', htmlType + counter);
     if(htmlType === "mod")
     {
-        newElement.innerHTML = '<span><br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/></span>';
+        newElement.innerHTML = '<span><br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>' +
+                               '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                               '<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>' +
+                               '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                               '<button type = "button" name="deleteMod" onclick = "deleteMod(event)">X</button><br/></span>';
         element.insertBefore(newElement, event.target);
     }
     else if(htmlType === "group")
     {
-        element.insertAdjacentHTML('beforebegin', '<span><br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod" onclick = "deleteMode(event)">X</button><br/><button name = "AddMod" type = "button" onclick="addNewElement(event, "mod")">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span name = "existAndMatch">All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button><br/><hr></span>');
+        element.insertAdjacentHTML('beforebegin', 
+                                  '<span><br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>' +
+                                  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                  '<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>' +
+                                  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                  '<button type = "button" name="deleteMod" onclick = "deleteMod(event)">X</button><br/>' +
+                                  '<button name = "AddMod" type = "button" onclick="addNewElement(event, "mod")">Add Mod</button><br/><br/>' +
+                                  '<select id="ModsConditions" class="Conditions">' +
+                                  '<ul><option value="0">And</option><option value="1">Not</option><option value="2">Count</option><option value="3">Sum</option><option value="4">If</option></ul></select>' +
+                                  '<span name = "existAndMatch">All specified mods must exist and match their values.</span>' +
+                                  '<button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button><br/><hr></span>'
+                                  );
     }
     i++;
 }
-function addNewGroup(callingElement)
-{
-    let target = document.getElementById(callingElement);
-    let newElement = document.createElement("span");
-    target.insertAdjacentHTML('beforeend', '<br/><br/><br/><button name = "AddMod" type = "button" onclick="dynamicAddElement(event)">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button>');
-}
-function deleteGroup(event)
-{
-    console.log(event.parentNode.id);
-    var x = document.getElementById(event.parentNode.id);
-    console.log(x.parentNode.id);
-}
-function deleteMode(test)
-{
-    x = test.target.parentNode;
-    x.innerHTML = "";
-    x.remove();
-}
-function reloadPage() { window.location.reload(); }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function addElementFromInsert(callingElement)
-{
-    console.log(callingElement);
-    let parent = callingElement.parentNode.id;
-    console.log("Testing addelementfrominsert");
-    let element = document.getElementById(parent);
-    let newElement = document.createElement("div");
-    newElement.setAttribute('id', parent + dynamicInsert);
-    console.log("Testing NewElement" + newElement.id);
-    newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
-    console.log(newElement.innerHTML);
-    parent.insertBefore(newElement, callingElement);
-    i++;
-}
-
-
-
-function addElementFromInsert2(callingElement)
-{
-    let parent = document.getElementById("dynamicModsDropdown");
-    let newElement = document.createElement("div");
-    newElement.setAttribute('id', 'gggg3');
-    newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
-    parent.insertBefore(newElement, parent.children[8]);
-
-    console.log("testing" + addElementTest[1].id);
-}
-
-
-</script>
-</html>
-
-
-
-<!-- ----------------------------------------------------------------------------------------- GARBAGE CODE COLLECTION -----------------------------------------------------------------------------------------------
-    
-    function addNewElement2(event, htmlType)
-    {
-        const element = event.target.parentNode;
-        let newElement = document.createElement("span");
-        let htmlToInsert = [];
-        if(htmlType === "mod")
-        {
-            htmlToInsert = ['<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>',
-                            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/>',
-                            '<input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
-                            '<button type = "button" name="deleteMod">X</button><br/>'
-                           ]
-            for(let i = 0; i < htmlToInsert.length; i++)
-            {
-                
-            }
-    
-    
-            newElement.setAttribute('id', htmlType + i);
-            element.insertBefore(newElement, event.target);
-        }
-        else if(htmlType === "group")
-        {
-            element.insertAdjacentHTML('beforebegin', '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/><br/><button name = "AddMod" type = "button" onclick="addNewElement(event, "mod")">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button><br/><hr>');
-        }
-        
-        
-        
-        i++;
-    }
-    function addElementFromInsert3(callingElement)
-    {
-        let parent = document.getElementById(callingElement.parentElement);
-        let newElement = document.createElement("div");
-        //let callingChildValue = for (let i = 0; i < parent.children.length; i++){
-        // if(parent.children[i] === callingElement){
-        //    
-        //  }     
-        //}
-        newElement.setAttribute('id', 'gggg3');
-        newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
-        parent.insertBefore(newElement, null);
-    }
-
-    let parent = document.getElementById("dynamicModsDropdown");
-    
-        if ( typeof newElement2 !== 'undefined') {
-            element = document.getElementById("dynamicFilterGroupLocation");
-            element.appendChild(newElement2); 
-        }
-        
-        
-        function addNewElement111(event, htmlType)
-        {
-            console.log(target);
-            const element = document.getElementById(target.parentNode.parentNode.id);
-            let newElement = document.createElement("span");
-            newElement.setAttribute('id', htmlType + i);
-            if(htmlType === "mod")
-            {
-                newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>';
-            }
-            else if(htmlType === "group")
-            {
-                newElement.innerHTML = '<br/><br/><br/><button name = "AddMod" type = "button" onclick="dynamicAddElement()">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup" onclick = "deleteGroup(event)">Delete Group</button>';
-            }
-            element.appendChild(newElement);
-            if ( typeof newElement2 !== 'undefined') {
-                element = document.getElementById("dynamicFilterGroupLocation");
-                element.appendChild(newElement2); 
-            }
-            if ( typeof newElement2 !== 'undefined') {
-                console.log(newElement.id);
-                addNewGroup(newElement.id);
-            }
-            i++;
-            return target;
-        }
-    
-    e.parentNode.removeChild(e);
-    for (z=0; z<x.children.length; z++)
-    {
-        x.removeChild(z);
-    }
-
-
-    <input type="text">
-    $("#Base select").prepend("JQUERY");
-
-loadJSON("https://www.pathofexile.com/character-window/get-items?accountName=Duji&character=Wuj", gotData, 'jsonp')
-let data = loadJSON("https://www.pathofexile.com/character-window/get-items?accountName=Duji&character=Wuj");
-https://www.pathofexile.com/character-window/get-characters?accountName=xxx
-https://www.pathofexile.com/character-window/get-items?accountName=xxx&character=xxx //Items equipped on character
-http://www.pathofexile.com/character-window/get-stash-items?eague=standard&tabs=1&tabIndex=1 //Stash probably outdated
-
-Invalid shorthand property initializer error
-    $("#Base").on("click", function(){
-        $('#Base').append($('<option>', {
-            value = "Search",
-            text = ""
-        }));
-    });
-    var newElement = '<br/><div><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"><input type="text" class = "addedInput" placeholder="max">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/></div>'
-    element.insertAdjacentHTML('beforeend', newElement);
-
-
-    let element = document.getElementById("ModsDropdown");
-    let newElement = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>'
-    newElement.setAttribute('id', 'TESTING')
-    element.insertAdjacentHTML('beforeend', newElement);
-
-
-    function addNewMod()
-    {
-        let element = document.getElementById("ModsDropdown");
-        let newElement = document.createElement('div');
-        newElement.setAttribute('id', i);
-        newElement.innerHTML = '<br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"><input type="text" class = "addedInput" placeholder="max">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>'
-        element.appendChild(newElement);
-        i++;
-    }
-    
-    function addFilterSpan() 
-    {
-        let element = document.getElementById("filterGroupLocation");
-        let newElement = document.createElement('span');
-        let testing3 = document.getElementById("modsDropdown");
-        newElement.setAttribute('id', "filter" + x);
-        element.appendChild(newElement, testing3);
-        x++;
-    }
-   
-    
-    
-function testing(){
-    loadJSON("https://www.pathofexile.com/character-window/get-items?accountName=Duji&character=Wuj", gotData, 'jsonp');
- }
- function gotData(data){
-     console.log("gotData called");
- }
- 
- newElement.innerHTML = '<br/><hr/><br/><select class="ModsClass"><option>---</option><option value="0">Option 0</option><option value="1">Option 1</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="min"><input type="text" placeholder="max">&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/><br/><br/><button type = "button" name="AddMod" onclick="addNewElement(event, "mod")">Add Mod</button><br/><br/><select id="ModsConditions" class="Conditions"><ul><li><option value="0">And</option></li><li><option value="1">Not</option></li><li><option value="2">Count</option></li><li><option value="3">Sum</option></li><li><option value="4">If</option></li></ul></select><span>All specified mods must exist and match their values.</span><button id = "deleteModGroup" name="DeleteModGroup">Delete Group</button>';
-                                   <br/><select class="ModsClass"><option>---</option><option value="0">Option 1</option><option value="1">Option 2</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class = "addedInput" placeholder="min"/><input type="text" class = "addedInput" placeholder="max"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type = "button" name="deleteMod">X</button><br/>
-
-
-                                   function addElementFromInsert2(callingElement)
-                                   {
-                                       let parent = document.getElementById("filterGroupLocation");
-                                       let newElement = document.createElement("h1");
-                                       newElement.innerText = "Testing";
-                                       newElement.setAttribute('id', 'gggg3');
-                                       parent.insertBefore(newElement, parent.children[8]);
-                                   }
-
-
-
-
 -->
